@@ -98,38 +98,26 @@ while True:
     cpu_web01=cpu_web01*cpu_bright*global_bright
     disk_web01=disk_web01*disk_bright*global_bright
     net_tot_web01=(net_tot_web01/net_scale)*net_bright*global_bright
-    print("NET_TOT_WEB01=",end='')
-    print(net_tot_web01)
 
     cpu_web04=cpu_web04*cpu_bright*global_bright
     disk_web04=disk_web04*disk_bright*global_bright
     net_tot_web04=(net_tot_web04/net_scale)*net_bright*global_bright
-    print("NET_TOT_WEB04=",end='')
-    print(net_tot_web04)
 
     cpu_web02=cpu_web02*cpu_bright*global_bright
     disk_web02=disk_web02*disk_bright*global_bright
     net_tot_web02=(net_tot_web02/net_scale)*net_bright*global_bright
-    print("NET_TOT_WEB02=",end='')
-    print(net_tot_web02)
 
     cpu_app01=cpu_app01*cpu_bright*global_bright
     disk_app01=disk_app01*disk_bright*global_bright
     net_tot_app01=(net_tot_app01/net_scale)*net_bright*global_bright
-    print("NET_TOT_APP01=",end='')
-    print(net_tot_app01)
 
     cpu_app02=cpu_app02*cpu_bright*global_bright
     disk_app02=disk_app02*disk_bright*global_bright
     net_tot_app02=(net_tot_app02/net_scale)*net_bright*global_bright
-    print("NET_TOT_APP02=",end='')
-    print(net_tot_app02)
 
     cpu_sql01=cpu_sql01*cpu_bright*global_bright
     disk_sql01=disk_sql01*disk_bright*global_bright
     net_tot_sql01=(net_tot_sql01/net_scale)*net_bright*global_bright
-    print("NET_TOT_SQL01=",end='')
-    print(net_tot_sql01)
 
 # Modify output for BLINKT here.
     OutputToBlinkt.set_values(1,1,1,
@@ -139,7 +127,7 @@ while True:
                              cpu_app01,net_tot_app01,disk_app01,
                              cpu_app02,net_tot_app02,disk_app02,
                              cpu_sql01,net_tot_sql01,disk_sql01,
-                             33*global_bright,33*global_bright,33*global_bright)
+                             25*global_bright,25*global_bright,25*global_bright)
                              
     time.sleep(pollDelay)
 
