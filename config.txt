@@ -1,10 +1,19 @@
 [NewRelic]
-account = YourAccount
-queryKey = YourQueryKey
+account = 1476718
+queryKey = BF0zgnx-m3CxDhfUL6O9cVYDxHM0uHet
 queryTimeout = 10
 
 [Hosts]
 hostnames = OLDCSSTEST
+# Specific host per pixel (or single value for fixed brightness)
+pixel0Host = 1
+pixel1Host = OLDCSSTESTWEB01
+pixel2Host = OLDCSSTESTWEB04
+pixel3Host = OLDCSSTESTWEB02
+pixel4Host = OLDCSSTESTAPP01
+pixel5Host = OLDCSSTESTAPP02
+pixel6Host = OLDCSSTESTSQL01
+pixel7Host = 25
 
 [Delays]
 pollDelay = 60
