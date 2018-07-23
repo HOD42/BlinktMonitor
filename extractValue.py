@@ -11,7 +11,7 @@ class ExtractValue():
                 value=this_hostname['results'][0]['average']
                 return(value)
         # Not found hostname
-        print("Not found!")
+        print("get_average didn't find hostname="+hostname)
         return(None)
 
 # Differentiate between 'average' and 'result' responses
@@ -23,6 +23,6 @@ class ExtractValue():
                 value=this_hostname['results'][0]['result']
                 return(value)
         # Not found hostname
-        print("Not found!")
+        print("get_result didn't find hostname="+hostname)
         return(None)
         

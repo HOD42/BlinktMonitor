@@ -1,0 +1,4 @@
+[NewRelic]
+account = YourAccount
+queryKey = YourQueryKey
+queryTimeout = 10

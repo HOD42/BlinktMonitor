@@ -6,11 +6,13 @@ import urllib.parse
 from queryNewRelic import QueryNewRelic
 from extractValue import ExtractValue
 import configparser
+configNR=configparser.ConfigParser()
+configNR.read("NewRelic.txt")
+account = configNR.get('NewRelic', 'account')
+queryKey = configNR.get('NewRelic', 'queryKey')
+queryTimeout = float(configNR.get('NewRelic', 'queryTimeout'))
 config=configparser.ConfigParser()
 config.read("config.txt")
-account = config.get('NewRelic', 'account')
-queryKey = config.get('NewRelic', 'queryKey')
-queryTimeout = float(config.get('NewRelic', 'queryTimeout'))
 hostnames = config.get('Hosts', 'hostnames')
 pixel0Host = config.get('Hosts', 'pixel0Host')
 pixel1Host = config.get('Hosts', 'pixel1Host')
@@ -43,6 +45,8 @@ while True:
         print("No q1")
         q1pixel1=q1pixel2=q1pixel3=q1pixel4=q1pixel5=q1pixel6=cpu_error_value
     else:
+        #print("q1.json_response=")
+        #print (q1.json_response)
         # Trial for integer to override query
         try:
             int(pixel0Host)
@@ -50,8 +54,7 @@ while True:
         except:
             q1pixel0=ExtractValue.get_average(q1.json_response, pixel0Host)
         print("q1pixel0 ("+pixel0Host+")="+str(q1pixel0))
-        
-        #q1pixel1=ExtractValue.get_average(q1.json_response, 'OLDCSSTESTWEB01')    
+         
         try:
             int(pixel1Host)
             q1pixel1=float(pixel1Host)
@@ -59,7 +62,6 @@ while True:
             q1pixel1=ExtractValue.get_average(q1.json_response, pixel1Host)
         print("q1pixel1 ("+pixel1Host+")="+str(q1pixel1))
         
-        #q1pixel2=ExtractValue.get_average(q1.json_response, 'OLDCSSTESTWEB04')
         try:
             int(pixel2Host)
             q1pixel2=float(pixel2Host)
@@ -67,7 +69,6 @@ while True:
             q1pixel2=ExtractValue.get_average(q1.json_response, pixel2Host)
         print("q1pixel2 ("+pixel2Host+")="+str(q1pixel2))
         
-        #q1pixel3=ExtractValue.get_average(q1.json_response, 'OLDCSSTESTWEB02')
         try:
             int(pixel3Host)
             q1pixel3=float(pixel3Host)
@@ -75,7 +76,6 @@ while True:
             q1pixel3=ExtractValue.get_average(q1.json_response, pixel3Host)
         print("q1pixel3 ("+pixel3Host+")="+str(q1pixel3))
         
-        #q1pixel4=ExtractValue.get_average(q1.json_response, 'OLDCSSTESTAPP01')
         try:
             int(pixel4Host)
             q1pixel4=float(pixel4Host)
@@ -83,7 +83,6 @@ while True:
             q1pixel4=ExtractValue.get_average(q1.json_response, pixel4Host)
         print("q1pixel4 ("+pixel4Host+")="+str(q1pixel4))
         
-        #q1pixel5=ExtractValue.get_average(q1.json_response, 'OLDCSSTESTAPP02')
         try:
             int(pixel5Host)
             q1pixel5=float(pixel5Host)
@@ -91,7 +90,6 @@ while True:
             q1pixel5=ExtractValue.get_average(q1.json_response, pixel5Host)
         print("q1pixel5 ("+pixel5Host+")="+str(q1pixel5))
         
-        #q1pixel6=ExtractValue.get_average(q1.json_response, 'OLDCSSTESTSQL01')
         try:
             int(pixel6Host)
             q1pixel6=float(pixel6Host)
@@ -115,7 +113,9 @@ while True:
     if q2.json_response == None:
         print("No q2")
         q2pixel1=q2pixel2=q2pixel3=q2pixel4=q2pixel5=q2pixel6=disk_error_value
-    else:   
+    else:
+        #print("q2.json_response=")
+        #print (q2.json_response)
         # Trial for integer to override query
         try:
             int(pixel0Host)
@@ -123,8 +123,7 @@ while True:
         except:
             q2pixel0=ExtractValue.get_average(q2.json_response, pixel0Host)
         print("q2pixel0 ("+pixel0Host+")="+str(q2pixel0))
-            
-        #q2pixel1=ExtractValue.get_average(q2.json_response, 'OLDCSSTESTWEB01')    
+               
         try:
             int(pixel1Host)
             q2pixel1=float(pixel1Host)
@@ -132,7 +131,6 @@ while True:
             q2pixel1=ExtractValue.get_average(q2.json_response, pixel1Host)
         print("q2pixel1 ("+pixel1Host+")="+str(q2pixel1))
         
-        #q2pixel2=ExtractValue.get_average(q2.json_response, 'OLDCSSTESTWEB04')
         try:
             int(pixel2Host)
             q2pixel2=float(pixel2Host)
@@ -140,7 +138,6 @@ while True:
             q2pixel2=ExtractValue.get_average(q2.json_response, pixel2Host)
         print("q2pixel2 ("+pixel2Host+")="+str(q2pixel2))
         
-        #q2pixel3=ExtractValue.get_average(q2.json_response, 'OLDCSSTESTWEB02')
         try:
             int(pixel3Host)
             q2pixel3=float(pixel3Host)
@@ -148,7 +145,6 @@ while True:
             q2pixel3=ExtractValue.get_average(q2.json_response, pixel3Host)
         print("q2pixel3 ("+pixel3Host+")="+str(q2pixel3))
         
-        #q2pixel4=ExtractValue.get_average(q2.json_response, 'OLDCSSTESTAPP01')
         try:
             int(pixel4Host)
             q2pixel4=float(pixel4Host)
@@ -156,7 +152,6 @@ while True:
             q2pixel4=ExtractValue.get_average(q2.json_response, pixel4Host)
         print("q2pixel4 ("+pixel4Host+")="+str(q2pixel4))
         
-        #q2pixel5=ExtractValue.get_average(q2.json_response, 'OLDCSSTESTAPP02')
         try:
             int(pixel5Host)
             q2pixel5=float(pixel5Host)
@@ -164,7 +159,6 @@ while True:
             q2pixel5=ExtractValue.get_average(q2.json_response, pixel5Host)
         print("q2pixel5 ("+pixel5Host+")="+str(q2pixel5))
         
-        #q2pixel6=ExtractValue.get_average(q2.json_response, 'OLDCSSTESTSQL01')
         try:
             int(pixel6Host)
             q2pixel6=float(pixel6Host)
@@ -189,7 +183,9 @@ while True:
     if q3.json_response == None:
         print("No q3")
         q3pixel1=q3pixel2=q3pixel3=q3pixel4=q3pixel5=q3pixel6=net_error_value
-    else:  
+    else:
+        #print("q3.json_response=")
+        #print (q3.json_response)
         # Trial for integer to override query
         try:
             int(pixel0Host)
@@ -197,8 +193,7 @@ while True:
         except:
             q3pixel0=ExtractValue.get_result(q3.json_response, pixel0Host)
         print("q3pixel0 ("+pixel0Host+")="+str(q3pixel0))
-            
-        #q3pixel1=ExtractValue.get_result(q3.json_response, 'OLDCSSTESTWEB01')    
+             
         try:
             int(pixel1Host)
             q3pixel1=float(pixel1Host)
@@ -206,15 +201,13 @@ while True:
             q3pixel1=ExtractValue.get_result(q3.json_response, pixel1Host)
         print("q3pixel1 ("+pixel1Host+")="+str(q3pixel1))
         
-        #q3pixel2=ExtractValue.get_result(q3.json_response, 'OLDCSSTESTWEB04')
         try:
             int(pixel2Host)
             q3pixel2=float(pixel2Host)
         except:
             q3pixel2=ExtractValue.get_result(q3.json_response, pixel2Host)
         print("q3pixel2 ("+pixel2Host+")="+str(q3pixel2))
-        
-        #q3pixel3=ExtractValue.get_result(q3.json_response, 'OLDCSSTESTWEB02')
+
         try:
             int(pixel3Host)
             q3pixel3=float(pixel3Host)
@@ -222,7 +215,6 @@ while True:
             q3pixel3=ExtractValue.get_result(q3.json_response, pixel3Host)
         print("q3pixel3 ("+pixel3Host+")="+str(q3pixel3))
         
-        #q3pixel4=ExtractValue.get_result(q3.json_response, 'OLDCSSTESTAPP01')
         try:
             int(pixel4Host)
             q3pixel4=float(pixel4Host)
@@ -230,7 +222,6 @@ while True:
             q3pixel4=ExtractValue.get_result(q3.json_response, pixel4Host)
         print("q3pixel4 ("+pixel4Host+")="+str(q3pixel4))
         
-        #q3pixel5=ExtractValue.get_result(q3.json_response, 'OLDCSSTESTAPP02')
         try:
             int(pixel5Host)
             q3pixel5=float(pixel5Host)
@@ -238,7 +229,6 @@ while True:
             q3pixel5=ExtractValue.get_result(q3.json_response, pixel5Host)
         print("q3pixel5 ("+pixel5Host+")="+str(q3pixel5))
         
-        #q3pixel6=ExtractValue.get_result(q3.json_response, 'OLDCSSTESTSQL01')
         try:
             int(pixel6Host)
             q3pixel6=float(pixel6Host)
