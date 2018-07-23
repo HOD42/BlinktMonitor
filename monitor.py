@@ -254,6 +254,9 @@ while True:
         print("q3pixel7 ("+pixel7Host+")="+str(q3pixel7))
 
     # Process query results (scale/brightness)
+    q1pixel0=q1pixel0*cpu_bright*global_bright
+    q2pixel0=q2pixel0*disk_bright*global_bright
+    q3pixel0=(q3pixel0/net_scale)*net_bright*global_bright
     
     q1pixel1=q1pixel1*cpu_bright*global_bright
     q2pixel1=q2pixel1*disk_bright*global_bright
@@ -278,6 +281,10 @@ while True:
     q1pixel6=q1pixel6*cpu_bright*global_bright
     q2pixel6=q2pixel6*disk_bright*global_bright
     q3pixel6=(q3pixel6/net_scale)*net_bright*global_bright
+
+    q1pixel7=q1pixel7*cpu_bright*global_bright
+    q2pixel7=q2pixel7*disk_bright*global_bright
+    q3pixel7=(q3pixel7/net_scale)*net_bright*global_bright
 
 # Modify output for BLINKT here.
     OutputToBlinkt.set_values(
