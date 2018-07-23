@@ -43,7 +43,7 @@ while True:
     q1.get_response(queryTimeout)
     if q1.json_response == None:
         print("No q1")
-        q1pixel1=q1pixel2=q1pixel3=q1pixel4=q1pixel5=q1pixel6=cpu_error_value
+        q1pixel0=q1pixel1=q1pixel2=q1pixel3=q1pixel4=q1pixel5=q1pixel6=q1pixel7=cpu_error_value
     else:
         #print("q1.json_response=")
         #print (q1.json_response)
@@ -112,7 +112,7 @@ while True:
     q2.get_response(queryTimeout)
     if q2.json_response == None:
         print("No q2")
-        q2pixel1=q2pixel2=q2pixel3=q2pixel4=q2pixel5=q2pixel6=disk_error_value
+        q2pixel0=q2pixel1=q2pixel2=q2pixel3=q2pixel4=q2pixel5=q2pixel6=q2pixel7=disk_error_value
     else:
         #print("q2.json_response=")
         #print (q2.json_response)
@@ -182,7 +182,7 @@ while True:
     q3.get_response(queryTimeout)
     if q3.json_response == None:
         print("No q3")
-        q3pixel1=q3pixel2=q3pixel3=q3pixel4=q3pixel5=q3pixel6=net_error_value
+        q3pixel0=q3pixel1=q3pixel2=q3pixel3=q3pixel4=q3pixel5=q3pixel6=q3pixel7=net_error_value
     else:
         #print("q3.json_response=")
         #print (q3.json_response)
