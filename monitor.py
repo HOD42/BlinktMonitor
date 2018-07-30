@@ -53,6 +53,8 @@ while True:
             q1pixel0=float(pixel0Host)
         except:
             q1pixel0=ExtractValue.get_average(q1.json_response, pixel0Host)
+            if q1pixel0==None:
+                q1pixel0=cpu_error_value
         print("q1pixel0 ("+pixel0Host+")="+str(q1pixel0))
          
         try:
@@ -60,6 +62,8 @@ while True:
             q1pixel1=float(pixel1Host)
         except:
             q1pixel1=ExtractValue.get_average(q1.json_response, pixel1Host)
+            if q1pixel1==None:
+                q1pixel1=cpu_error_value
         print("q1pixel1 ("+pixel1Host+")="+str(q1pixel1))
         
         try:
@@ -67,6 +71,8 @@ while True:
             q1pixel2=float(pixel2Host)
         except:
             q1pixel2=ExtractValue.get_average(q1.json_response, pixel2Host)
+            if q1pixel2==None:
+                q1pixel2=cpu_error_value
         print("q1pixel2 ("+pixel2Host+")="+str(q1pixel2))
         
         try:
@@ -74,6 +80,8 @@ while True:
             q1pixel3=float(pixel3Host)
         except:
             q1pixel3=ExtractValue.get_average(q1.json_response, pixel3Host)
+            if q1pixel3==None:
+                q1pixel3=cpu_error_value
         print("q1pixel3 ("+pixel3Host+")="+str(q1pixel3))
         
         try:
@@ -81,6 +89,8 @@ while True:
             q1pixel4=float(pixel4Host)
         except:
             q1pixel4=ExtractValue.get_average(q1.json_response, pixel4Host)
+            if q1pixel4==None:
+                q1pixel4=cpu_error_value
         print("q1pixel4 ("+pixel4Host+")="+str(q1pixel4))
         
         try:
@@ -88,6 +98,8 @@ while True:
             q1pixel5=float(pixel5Host)
         except:
             q1pixel5=ExtractValue.get_average(q1.json_response, pixel5Host)
+            if q1pixel5==None:
+                q1pixel5=cpu_error_value
         print("q1pixel5 ("+pixel5Host+")="+str(q1pixel5))
         
         try:
@@ -95,6 +107,8 @@ while True:
             q1pixel6=float(pixel6Host)
         except:
             q1pixel6=ExtractValue.get_average(q1.json_response, pixel6Host)
+            if q1pixel6==None:
+                q1pixel6=cpu_error_value
         print("q1pixel6 ("+pixel6Host+")="+str(q1pixel6))
 
         try:
@@ -102,6 +116,8 @@ while True:
             q1pixel7=float(pixel7Host)
         except:
             q1pixel7=ExtractValue.get_average(q1.json_response, pixel7Host)
+            if q1pixel7==None:
+                q1pixel7=cpu_error_value
         print("q1pixel7 ("+pixel7Host+")="+str(q1pixel7))
 
     # 2nd query (for disk)    
@@ -122,6 +138,8 @@ while True:
             q2pixel0=float(pixel0Host)
         except:
             q2pixel0=ExtractValue.get_average(q2.json_response, pixel0Host)
+            if q2pixel0==None:
+                q2pixel0=disk_error_value
         print("q2pixel0 ("+pixel0Host+")="+str(q2pixel0))
                
         try:
@@ -129,6 +147,8 @@ while True:
             q2pixel1=float(pixel1Host)
         except:
             q2pixel1=ExtractValue.get_average(q2.json_response, pixel1Host)
+            if q2pixel1==None:
+                q2pixel1=disk_error_value
         print("q2pixel1 ("+pixel1Host+")="+str(q2pixel1))
         
         try:
@@ -136,6 +156,8 @@ while True:
             q2pixel2=float(pixel2Host)
         except:
             q2pixel2=ExtractValue.get_average(q2.json_response, pixel2Host)
+            if q2pixel2==None:
+                q2pixel2=disk_error_value
         print("q2pixel2 ("+pixel2Host+")="+str(q2pixel2))
         
         try:
@@ -143,6 +165,8 @@ while True:
             q2pixel3=float(pixel3Host)
         except:
             q2pixel3=ExtractValue.get_average(q2.json_response, pixel3Host)
+            if q2pixel3==None:
+                q2pixel3=disk_error_value
         print("q2pixel3 ("+pixel3Host+")="+str(q2pixel3))
         
         try:
@@ -150,6 +174,8 @@ while True:
             q2pixel4=float(pixel4Host)
         except:
             q2pixel4=ExtractValue.get_average(q2.json_response, pixel4Host)
+            if q2pixel4==None:
+                q2pixel4=disk_error_value
         print("q2pixel4 ("+pixel4Host+")="+str(q2pixel4))
         
         try:
@@ -157,6 +183,8 @@ while True:
             q2pixel5=float(pixel5Host)
         except:
             q2pixel5=ExtractValue.get_average(q2.json_response, pixel5Host)
+            if q2pixel5==None:
+                q2pixel5=disk_error_value
         print("q2pixel5 ("+pixel5Host+")="+str(q2pixel5))
         
         try:
@@ -164,6 +192,8 @@ while True:
             q2pixel6=float(pixel6Host)
         except:
             q2pixel6=ExtractValue.get_average(q2.json_response, pixel6Host)
+            if q2pixel6==None:
+                q2pixel6=disk_error_value
         print("q2pixel6 ("+pixel6Host+")="+str(q2pixel6))
 
         try:
@@ -171,6 +201,8 @@ while True:
             q2pixel7=float(pixel7Host)
         except:
             q2pixel7=ExtractValue.get_average(q2.json_response, pixel7Host)
+            if q2pixel7==None:
+                q2pixel7=disk_error_value
         print("q2pixel7 ("+pixel7Host+")="+str(q2pixel7))
 
     # 3rd query (for network receive and transmit = net_tot)
@@ -192,6 +224,8 @@ while True:
             q3pixel0=float(pixel0Host)
         except:
             q3pixel0=ExtractValue.get_result(q3.json_response, pixel0Host)
+            if q3pixel0==None:
+                q3pixel0=net_error_value
         print("q3pixel0 ("+pixel0Host+")="+str(q3pixel0))
              
         try:
@@ -199,6 +233,8 @@ while True:
             q3pixel1=float(pixel1Host)
         except:
             q3pixel1=ExtractValue.get_result(q3.json_response, pixel1Host)
+            if q3pixel1==None:
+                q3pixel1=net_error_value
         print("q3pixel1 ("+pixel1Host+")="+str(q3pixel1))
         
         try:
@@ -206,6 +242,8 @@ while True:
             q3pixel2=float(pixel2Host)
         except:
             q3pixel2=ExtractValue.get_result(q3.json_response, pixel2Host)
+            if q3pixel2==None:
+                q3pixel2=net_error_value
         print("q3pixel2 ("+pixel2Host+")="+str(q3pixel2))
 
         try:
@@ -213,6 +251,8 @@ while True:
             q3pixel3=float(pixel3Host)
         except:
             q3pixel3=ExtractValue.get_result(q3.json_response, pixel3Host)
+            if q3pixel3==None:
+                q3pixel3=net_error_value
         print("q3pixel3 ("+pixel3Host+")="+str(q3pixel3))
         
         try:
@@ -220,6 +260,8 @@ while True:
             q3pixel4=float(pixel4Host)
         except:
             q3pixel4=ExtractValue.get_result(q3.json_response, pixel4Host)
+            if q3pixel4==None:
+                q3pixel4=net_error_value
         print("q3pixel4 ("+pixel4Host+")="+str(q3pixel4))
         
         try:
@@ -227,6 +269,8 @@ while True:
             q3pixel5=float(pixel5Host)
         except:
             q3pixel5=ExtractValue.get_result(q3.json_response, pixel5Host)
+            if q3pixel5==None:
+                q3pixel5=net_error_value
         print("q3pixel5 ("+pixel5Host+")="+str(q3pixel5))
         
         try:
@@ -234,6 +278,8 @@ while True:
             q3pixel6=float(pixel6Host)
         except:
             q3pixel6=ExtractValue.get_result(q3.json_response, pixel6Host)
+            if q3pixel6==None:
+                q3pixel6=net_error_value
         print("q3pixel6 ("+pixel6Host+")="+str(q3pixel6))
 
         try:
@@ -241,6 +287,8 @@ while True:
             q3pixel7=float(pixel7Host)
         except:
             q3pixel7=ExtractValue.get_result(q3.json_response, pixel7Host)
+            if q3pixel7==None:
+                q3pixel7=net_error_value
         print("q3pixel7 ("+pixel7Host+")="+str(q3pixel7))
 
     # Process query results (scale/brightness)
