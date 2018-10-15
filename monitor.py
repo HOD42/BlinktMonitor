@@ -36,7 +36,7 @@ net_error_value = float(config.get('Brightness', 'net_error_value'))/net_bright
 
 while True:
     # 1st query (for CPU)
-    raw_nrql="SELECT average(cpuPercent) FROM SystemSample FACET hostname WHERE hostname LIKE '"+hostnames+"%' SINCE 1 minute ago"
+    raw_nrql="SELECT average(cpuPercent) FROM SystemSample FACET hostname WHERE hostname LIKE '"+hostnames+"%' SINCE 1 minute ago limit 20"
     encoded_nrql=urllib.parse.quote_plus(raw_nrql)
     url='https://insights-api.newrelic.com/v1/accounts/'+account+'/query?nrql='+encoded_nrql
     q1=QueryNewRelic(url,queryKey,queryTimeout)
@@ -121,7 +121,7 @@ while True:
         print("q1pixel7 ("+pixel7Host+")="+str(q1pixel7))
 
     # 2nd query (for disk)    
-    raw_nrql="SELECT average(totalUtilizationPercent) FROM StorageSample FACET hostname WHERE hostname LIKE '"+hostnames+"%' SINCE 1 minute ago"
+    raw_nrql="SELECT average(totalUtilizationPercent) FROM StorageSample FACET hostname WHERE hostname LIKE '"+hostnames+"%' SINCE 1 minute ago limit 20"
     encoded_nrql=urllib.parse.quote_plus(raw_nrql)
     url='https://insights-api.newrelic.com/v1/accounts/'+account+'/query?nrql='+encoded_nrql
     q2=QueryNewRelic(url,queryKey,queryTimeout)
@@ -206,7 +206,7 @@ while True:
         print("q2pixel7 ("+pixel7Host+")="+str(q2pixel7))
 
     # 3rd query (for network receive and transmit = net_tot)
-    raw_nrql="SELECT average(receiveBytesPerSecond) + average(transmitBytesPerSecond) as 'net_tot' FROM NetworkSample FACET hostname WHERE hostname LIKE '"+hostnames+"%' SINCE 1 minute ago"
+    raw_nrql="SELECT average(receiveBytesPerSecond) + average(transmitBytesPerSecond) as 'net_tot' FROM NetworkSample FACET hostname WHERE hostname LIKE '"+hostnames+"%' SINCE 1 minute ago limit 20"
 # NOTE: The above query does not contain 'average' in the response, so need to parse for 'result' rather than 'average'.
     encoded_nrql=urllib.parse.quote_plus(raw_nrql)
     url='https://insights-api.newrelic.com/v1/accounts/'+account+'/query?nrql='+encoded_nrql
